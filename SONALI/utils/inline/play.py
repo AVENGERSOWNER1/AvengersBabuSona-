@@ -62,9 +62,8 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
 
     buttons = [
        ],
-
+    
         # Row 2: Three new buttons (Backward, History, Forward)
-        [
             InlineKeyboardButton(text="⪻  -30s", callback_data=f"SEEKBACKWARD|{chat_id}|30"),
             InlineKeyboardButton(text="📥", callback_data=f"DOWNLOAD|{chat_id}"),
             InlineKeyboardButton(text="+30s  ⪼", callback_data=f"SEEKFORWARD|{chat_id}|30"),
