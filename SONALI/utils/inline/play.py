@@ -61,39 +61,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         bar = "╌╌╌╌╌╌╌╌╌♡"
 
     buttons = [
-       ],
     
-        # Row 2: Three new buttons (Backward, History, Forward)
-            InlineKeyboardButton(text="⪻  -30s", callback_data=f"SEEKBACKWARD|{chat_id}|30"),
-            InlineKeyboardButton(text="📥", callback_data=f"DOWNLOAD|{chat_id}"),
-            InlineKeyboardButton(text="+30s  ⪼", callback_data=f"SEEKFORWARD|{chat_id}|30"),
-        ],
-        
-        [
-            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-        [
-            InlineKeyboardButton(
-                text=f"{played} {bar} {dur}",
-                callback_data="GetTimer",
-            )
-        ],
-      [
-            InlineKeyboardButton(
-                text="✰ ᴏᴡɴᴇʀ ✰", url="http://t.me/AVENGERS_OWNER",
-            ),
-            InlineKeyboardButton(
-                text="✰ ᴄʜᴀᴛ ✰", url="https://t.me/II_WORLD_CHAT_II",
-            )
-        ],
-         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
-        ]
-
-    return buttons
 
 
 def stream_markup(_, videoid, chat_id):
@@ -101,7 +69,44 @@ def stream_markup(_, videoid, chat_id):
         [
             InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
             InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{cbuttons = [
+        # Row 1: Progress bar with timing
+        [
+            InlineKeyboardButton(
+                text=f"{played.lower()}  {bar}  {dur.lower()}",
+                callback_data="GetTimer"
+            )
+        ],
+
+        # Row 2: Three new buttons (Backward, History, Forward)
+        [
+            InlineKeyboardButton(text="⪻  -30s", callback_data=f"SEEKBACKWARD|{chat_id}|30"),
+            InlineKeyboardButton(text="📥", callback_data=f"DOWNLOAD|{chat_id}"),
+            InlineKeyboardButton(text="+30s  ⪼", callback_data=f"SEEKFORWARD|{chat_id}|30"),
+        ],
+
+        # Row 3: Main control buttons
+        [
+            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
             InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+        ],
+
+        # Row 4: Support buttons
+        [
+            InlineKeyboardButton("˹ ᴜᴘᴅᴧᴛᴇ ˼", url=SUPPORT_CHANNEL),
+            InlineKeyboardButton("˹ sᴜᴘᴘᴏꝛᴛ  ˼", url=SUPPORT_CHAT)            
+        ],
+
+        # Row 5: Close button
+        [
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"].lower(), callback_data="close")
+        ]
+    ]
+
+    return buttonshat_id}"),
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
          ],
